@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
+import TiltCard from '../components/TiltCard';
 
 const features = [
     {
@@ -57,7 +58,6 @@ const Landing = () => {
 
     return (
         <div>
-            {/* ── HERO ── */}
             <section className="landing-hero" id="hero-section">
                 <div className="hero-bg">
                     <img
@@ -69,7 +69,7 @@ const Landing = () => {
                 <div className="hero-overlay" />
 
                 <div className="hero-content">
-                    <div className="hero-badge">
+                    <div className="hero-badge anim-float-3d">
                         <span>✈️</span>
                         AI-Powered Travel Planning
                     </div>
@@ -132,7 +132,6 @@ const Landing = () => {
                 </div>
             </section>
 
-            {/* ── HOW IT WORKS ── */}
             <section className="section" id="how-it-works">
                 <div className="section-header">
                     <div className="section-badge">How it works</div>
@@ -144,16 +143,15 @@ const Landing = () => {
 
                 <div className="steps-grid stagger">
                     {steps.map((step, i) => (
-                        <div className="step-card" key={i} id={`step-${i}`}>
+                        <TiltCard className="step-card" key={i} id={`step-${i}`}>
                             <div className="step-number">{step.number}</div>
                             <h3 className="step-title">{step.title}</h3>
                             <p className="step-description">{step.description}</p>
-                        </div>
+                        </TiltCard>
                     ))}
                 </div>
             </section>
 
-            {/* ── FEATURES ── */}
             <section className="section" id="features-section" style={{ paddingTop: 32 }}>
                 <div className="section-header">
                     <div className="section-badge">Features</div>
@@ -169,16 +167,15 @@ const Landing = () => {
 
                 <div className="features-grid stagger">
                     {features.map((feature, i) => (
-                        <div className="feature-card" key={i} id={`feature-${i}`}>
+                        <TiltCard className="feature-card" key={i} id={`feature-${i}`}>
                             <div className="feature-icon">{feature.icon}</div>
                             <h3 className="feature-title">{feature.title}</h3>
                             <p className="feature-description">{feature.description}</p>
-                        </div>
+                        </TiltCard>
                     ))}
                 </div>
             </section>
 
-            {/* ── CTA ── */}
             <section className="cta-section" id="cta-section">
                 <h2 className="section-title" style={{ marginBottom: 12 }}>
                     Ready to <span className="gradient-text">explore?</span>
@@ -197,7 +194,6 @@ const Landing = () => {
                 )}
             </section>
 
-            {/* ── FOOTER ── */}
             <footer className="landing-footer">
                 <p>© {new Date().getFullYear()} Voyage. AI-powered trip planning.</p>
             </footer>

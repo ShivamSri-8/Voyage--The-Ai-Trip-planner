@@ -3,27 +3,25 @@ import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 
-// ── Day accent colors ──
 const DAY_COLORS = [
-    '#6c63ff', // destination pin (purple)
-    '#f87171', // day 1 - red
-    '#fb923c', // day 2 - orange
-    '#fbbf24', // day 3 - yellow
-    '#34d399', // day 4 - green
-    '#22d3ee', // day 5 - cyan
-    '#818cf8', // day 6 - indigo
-    '#f472b6', // day 7 - pink
-    '#a78bfa', // day 8 - violet
-    '#2dd4bf', // day 9 - teal
-    '#facc15', // day 10 - gold
-    '#fb7185', // day 11
-    '#38bdf8', // day 12
-    '#a3e635', // day 13
-    '#e879f9', // day 14
-    '#f59e0b', // day 15
+    '#6c63ff',
+    '#f87171',
+    '#fb923c',
+    '#fbbf24',
+    '#34d399',
+    '#22d3ee',
+    '#818cf8',
+    '#f472b6',
+    '#a78bfa',
+    '#2dd4bf',
+    '#facc15',
+    '#fb7185',
+    '#38bdf8',
+    '#a3e635',
+    '#e879f9',
+    '#f59e0b',
 ];
 
-// ── Custom colored div icon ──
 const createDayIcon = (dayIndex, label) => {
     const color = DAY_COLORS[dayIndex] || DAY_COLORS[0];
     return L.divIcon({
@@ -55,7 +53,6 @@ const createDayIcon = (dayIndex, label) => {
     });
 };
 
-// ── Star icon for main destination ──
 const createDestinationIcon = () => {
     return L.divIcon({
         className: 'custom-map-pin',
@@ -67,7 +64,6 @@ const createDestinationIcon = () => {
                 border-radius: 50%;
                 display: flex; align-items: center; justify-content: center;
                 box-shadow: 0 4px 16px rgba(108,99,255,0.5);
-                animation: pulse-pin 2s infinite;
             ">
                 <span style="font-size: 18px; filter: drop-shadow(0 1px 2px rgba(0,0,0,0.2));">📍</span>
             </div>
@@ -78,7 +74,6 @@ const createDestinationIcon = () => {
     });
 };
 
-// ── Component to auto-fly to markers ──
 const FitBounds = ({ markers, activeDay, highlightedMarker }) => {
     const map = useMap();
     const prevBoundsRef = useRef(null);
@@ -112,10 +107,6 @@ const FitBounds = ({ markers, activeDay, highlightedMarker }) => {
     return null;
 };
 
-/**
- * MapView Component
- * Full-screen Leaflet map with colored day pins
- */
 const MapView = ({ markers = [], activeDay = 0, highlightedMarker = null, onMarkerClick }) => {
     const visibleMarkers =
         activeDay > 0
@@ -124,7 +115,7 @@ const MapView = ({ markers = [], activeDay = 0, highlightedMarker = null, onMark
 
     return (
         <MapContainer
-            center={[20.5937, 78.9629]} // Default: center of India
+            center={[20.5937, 78.9629]}
             zoom={5}
             scrollWheelZoom={true}
             style={{ height: '100%', width: '100%' }}

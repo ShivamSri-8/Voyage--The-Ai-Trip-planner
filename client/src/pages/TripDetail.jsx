@@ -76,7 +76,6 @@ const TripDetail = () => {
                     ← Back to Dashboard
                 </button>
 
-                {/* Hero */}
                 <div className="trip-detail-hero">
                     <h1 className="trip-detail-destination">
                         <span className="gradient-text">{trip.destination}</span>
@@ -99,7 +98,6 @@ const TripDetail = () => {
                     </button>
                 </div>
 
-                {/* Budget */}
                 <div className="budget-grid stagger" id="budget-breakdown">
                     {budgetItems.map((item, i) => (
                         <div className={`budget-item ${item.isTotal ? 'total' : ''}`} key={i}>
@@ -110,7 +108,6 @@ const TripDetail = () => {
                     ))}
                 </div>
 
-                {/* Itinerary */}
                 {trip.itinerary?.length > 0 && (
                     <div className="itinerary-section" id="itinerary-section">
                         <h2 className="section-heading"><span>🗓️</span> Day-by-Day Itinerary</h2>
@@ -141,7 +138,6 @@ const TripDetail = () => {
                     </div>
                 )}
 
-                {/* Hotels */}
                 {trip.hotels?.length > 0 && (
                     <div style={{ marginBottom: 48 }} id="hotels-section">
                         <h2 className="section-heading"><span>🏨</span> Recommended Hotels</h2>
@@ -153,14 +149,13 @@ const TripDetail = () => {
                                     <div className="hotel-price">{formatBudget(hotel.pricePerNight)}</div>
                                     <div className="hotel-price-label">per night</div>
                                     <div className="hotel-location"><span>📍</span> {hotel.locationArea}</div>
-                                    {hotel.reason && <div className="hotel-reason">"{hotel.reason}"</div>}
+                                    {hotel.reason && <div className="hotel-reason">&quot;{hotel.reason}&quot;</div>}
                                 </div>
                             ))}
                         </div>
                     </div>
                 )}
 
-                {/* Travel Tips */}
                 {trip.travelTips?.length > 0 && (
                     <div style={{ marginBottom: 48 }} id="tips-section">
                         <h2 className="section-heading"><span>💡</span> Travel Tips</h2>
@@ -177,7 +172,6 @@ const TripDetail = () => {
                     </div>
                 )}
 
-                {/* Interests */}
                 {trip.interests?.length > 0 && (
                     <div style={{ marginBottom: 48 }}>
                         <h2 className="section-heading"><span>🏷️</span> Trip Interests</h2>
@@ -189,7 +183,6 @@ const TripDetail = () => {
                     </div>
                 )}
 
-                {/* Delete */}
                 <div style={{ textAlign: 'center', padding: '32px 0 48px', borderTop: '1px solid var(--border)', marginTop: 24 }}>
                     <button className="btn btn-danger" onClick={handleDelete} disabled={deleting} id="delete-trip-btn">
                         {deleting ? (<><span className="spinner spinner-sm" /> Deleting...</>) : 'Delete this trip'}

@@ -2,7 +2,6 @@ import { useState, useEffect, useCallback } from 'react';
 
 let toastId = 0;
 
-// Global toast state — simple approach without a heavy library
 const listeners = new Set();
 let toasts = [];
 

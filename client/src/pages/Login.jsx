@@ -43,7 +43,6 @@ const Login = () => {
 
     return (
         <div className="auth-page" id="login-page">
-            {/* Left: Image Side */}
             <div className="auth-image-side">
                 <img
                     src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=60"
@@ -57,7 +56,6 @@ const Login = () => {
                 </div>
             </div>
 
-            {/* Right: Form Side */}
             <div className="auth-form-side">
                 <div className="auth-card anim-fade-in-up">
                     <div className="auth-header">
@@ -123,7 +121,7 @@ const Login = () => {
                     </form>
 
                     <p className="auth-footer">
-                        Don't have an account?{' '}
+                        Don&apos;t have an account?{' '}
                         <Link to="/register">Create one free</Link>
                     </p>
                 </div>

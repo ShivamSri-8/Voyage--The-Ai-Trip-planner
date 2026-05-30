@@ -53,7 +53,6 @@ const Register = () => {
 
     return (
         <div className="auth-page" id="register-page">
-            {/* Left: Image Side */}
             <div className="auth-image-side">
                 <img
                     src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=800&q=60"
@@ -67,7 +66,6 @@ const Register = () => {
                 </div>
             </div>
 
-            {/* Right: Form Side */}
             <div className="auth-form-side">
                 <div className="auth-card anim-fade-in-up">
                     <div className="auth-header">

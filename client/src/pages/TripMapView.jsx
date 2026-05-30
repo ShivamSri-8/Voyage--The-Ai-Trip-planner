@@ -6,10 +6,6 @@ import { toast } from '../components/Toast';
 import MapView from '../components/MapView';
 import ItineraryPanel from '../components/ItineraryPanel';
 
-/**
- * TripMapView — Full-screen interactive map page for a trip
- * Shows pins for all itinerary locations, with an overlay panel for details
- */
 const TripMapView = () => {
     const { id } = useParams();
     const navigate = useNavigate();
@@ -34,7 +30,6 @@ const TripMapView = () => {
             setTrip(tripData);
             setLoading(false);
 
-            // Start geocoding
             setGeocoding(true);
             setGeocodeProgress('Locating places on map...');
 
@@ -79,7 +74,6 @@ const TripMapView = () => {
 
     return (
         <div className="trip-map-page" id="trip-map-page">
-            {/* Full-screen Map */}
             <div className="trip-map-container">
                 <MapView
                     markers={markers}
@@ -89,7 +83,6 @@ const TripMapView = () => {
                 />
             </div>
 
-            {/* Top bar with back button + geocoding status */}
             <div className="trip-map-topbar">
                 <button className="trip-map-back" onClick={() => navigate(`/trip/${id}`)}>
                     ← Back to Details
@@ -108,7 +101,6 @@ const TripMapView = () => {
                 )}
             </div>
 
-            {/* Itinerary Panel (right side) */}
             {panelOpen && (
                 <ItineraryPanel
                     trip={trip}

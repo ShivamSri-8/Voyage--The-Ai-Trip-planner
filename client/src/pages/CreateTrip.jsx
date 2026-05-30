@@ -234,8 +234,18 @@ const CreateTrip = () => {
         <div className="create-trip-page" id="create-trip-page">
             <div className="container anim-fade-in">
                 <div className="create-trip-header">
+                    <div className="create-trip-hero-banner">
+                        <img
+                            src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1400&q=90&fit=crop&auto=format"
+                            alt="Travel planning"
+                            className="create-trip-hero-img"
+                        />
+                        <div className="create-trip-hero-overlay">
+                            <div className="create-trip-hero-badge">✈️ AI-Powered Trip Planner</div>
+                        </div>
+                    </div>
                     <h1 className="create-trip-title">
-                        Plan your <span className="gradient-text">trip</span>
+                        Plan your <span className="gradient-text">perfect trip</span>
                     </h1>
                     <p className="create-trip-subtitle">
                         Tell us your preferences and our AI will craft the perfect itinerary.
@@ -344,7 +354,7 @@ const CreateTrip = () => {
                         <div className="card-glass" style={{ marginBottom: 24 }}>
                             <div className="form-section-title">
                                 <span className="form-section-icon">👥</span>
-                                Who's traveling?
+                                Who&apos;s traveling?
                             </div>
                             <div className="chip-group">
                                 {groupTypes.map((g) => (

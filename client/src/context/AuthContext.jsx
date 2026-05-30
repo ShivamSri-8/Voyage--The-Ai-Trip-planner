@@ -15,29 +15,24 @@ export const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
 
-    // Restore session on mount — show cached user immediately, verify in background
     useEffect(() => {
         const restoreSession = async () => {
             const token = localStorage.getItem('voyage_token');
             const savedUser = localStorage.getItem('voyage_user');
 
             if (token && savedUser) {
-                // Immediately use cached user so UI renders instantly
                 try {
                     setUser(JSON.parse(savedUser));
                 } catch {
-                    // corrupted localStorage, clear it
                     localStorage.removeItem('voyage_token');
                     localStorage.removeItem('voyage_user');
                 }
 
-                // Verify token in background (don't block page load)
                 try {
                     const response = await authAPI.getMe();
                     setUser(response.data.user);
                     localStorage.setItem('voyage_user', JSON.stringify(response.data.user));
                 } catch {
-                    // Token invalid, clear everything
                     localStorage.removeItem('voyage_token');
                     localStorage.removeItem('voyage_user');
                     setUser(null);
